@@ -1,0 +1,14 @@
+.icon {
+  display: flex;
+  align-items: center;
+
+  &--small {
+    height: 10px;
+    width: 10px;
+  }
+
+  &--normal {
+    height: 20px;
+    width: 20px;
+  }
+}

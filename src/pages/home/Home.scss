@@ -1,0 +1,122 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1,
+  h2 {
+    font-size: 2rem;
+    color: #193566;
+    letter-spacing: -3px;
+    word-spacing: 10px;
+
+    span {
+      color: #97a7c3;
+    }
+  }
+
+  &__figure {
+    position: relative;
+
+    height: 250px;
+    width: 250px;
+  }
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 50%;
+
+  position: relative;
+
+  &__up {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &::before {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      box-shadow: -10px -10px 10px #ffffff;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      box-shadow: 10px 10px 10px #97a7c3;
+      border-radius: 50%;
+    }
+  }
+
+  &__down {
+    display: block;
+
+    width: 90%;
+    height: 90%;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+    pointer-events: none;
+
+    &::before {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      box-shadow: -10px -10px 10px #ffffff inset;
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      box-shadow: 10px 10px 10px #97a7c3 inset;
+      border-radius: 50%;
+    }
+  }
+}

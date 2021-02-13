@@ -1,0 +1,102 @@
+@mixin opacity {
+  opacity: 1;
+  transition: opacity 300ms ease;
+
+  &--opacity {
+    opacity: 0;
+  }
+}
+
+@mixin fullContent {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+@mixin itemPosition {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+
+  @media (min-width: 1000px) {
+    padding: 2rem;
+  }
+
+  position: fixed;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+
+  @media (min-width: 1000px) {
+    margin-bottom: 2rem;
+  }
+
+  &__items {
+    @include fullContent();
+
+    position: relative;
+  }
+
+  &__item {
+    @include fullContent();
+    @include itemPosition();
+    @include opacity();
+  }
+
+  &__open-close {
+    width: 40px;
+    display: flex;
+
+    transform: rotate(0deg);
+    transition: transform 300ms ease;
+
+    &--rotate {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__open,
+  &__close {
+    @include opacity();
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+
+  transform: translateX(0%);
+  transition: transform 300ms ease;
+
+  &--translate {
+    transform: translateX(100%);
+  }
+
+  &__items {
+    position: relative;
+  }
+  &__item {
+    @include opacity();
+
+    &--light {
+      color: #ecf0f3;
+    }
+
+    &--dark {
+      color: #193566;
+
+      @include itemPosition();
+    }
+  }
+}

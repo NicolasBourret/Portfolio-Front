@@ -1,0 +1,52 @@
+@mixin fullContent {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  padding: 1rem;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+
+  @media (min-width: 1000px) {
+    padding: 2rem;
+  }
+
+  button {
+    margin-right: 1rem;
+
+    @media (min-width: 1000px) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__items {
+    @include fullContent();
+
+    position: relative;
+  }
+
+  &__item {
+    @include fullContent();
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    &--opacity {
+      opacity: 0;
+    }
+  }
+}

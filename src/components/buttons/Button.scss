@@ -1,0 +1,113 @@
+$min-radius: 5px;
+$max-radius: 50%;
+
+@mixin backgroundButton {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@mixin backgroundButtonShadow {
+  @include backgroundButton();
+
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 1;
+  transition: opacity 300ms ease;
+}
+
+.btn {
+  background: none;
+  border: none;
+  outline: none;
+
+  position: relative;
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__up {
+    @include backgroundButton();
+
+    &::before {
+      @include backgroundButtonShadow();
+
+      box-shadow: -3px -3px 3px #ffffff;
+    }
+
+    &::after {
+      @include backgroundButtonShadow();
+
+      box-shadow: 3px 3px 3px #97a7c3;
+    }
+  }
+  &__down {
+    @include backgroundButton();
+
+    &::before {
+      @include backgroundButtonShadow();
+
+      box-shadow: -3px -3px 3px #ffffff inset;
+    }
+
+    &::after {
+      @include backgroundButtonShadow();
+
+      box-shadow: 3px 3px 3px #97a7c3 inset;
+    }
+  }
+
+  &--opacity {
+    opacity: 0;
+  }
+
+  &__text {
+    border-radius: $min-radius;
+    padding: 0.5rem 1rem;
+
+    text-transform: uppercase;
+    font-size: 0.87rem;
+    letter-spacing: 2px;
+
+    .btn__up,
+    .btn__down {
+      border-radius: $min-radius;
+
+      &::before,
+      &::after {
+        border-radius: $min-radius;
+      }
+    }
+  }
+
+  &__icon {
+    border-radius: $max-radius;
+    padding: 0.5rem;
+
+    .btn__up,
+    .btn__down {
+      border-radius: $max-radius;
+
+      &::before,
+      &::after {
+        border-radius: $max-radius;
+      }
+    }
+
+    &--light {
+      background-color: #ecf0f3;
+    }
+  }
+}
