@@ -26,10 +26,10 @@ function App({ location }) {
             <AnimatePresence exitBeforeEnter>
               <Switch location={location} key={location.pathname}>
                 <Route path="/projects">
-                  <Projects />
+                  <Projects handleDark={handleDark} />
                 </Route>
-                <Route path="/project">
-                  <Project />
+                <Route path="/project/:id">
+                  <Project handleDark={handleDark} />
                 </Route>
                 <Route path="/">
                   <Home />

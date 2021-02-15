@@ -11,6 +11,20 @@ body,
   padding: 0;
 }
 
+div::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+div::-webkit-scrollbar-track {
+  background: #ecf0f3; /* color of the tracking area */
+}
+
+div::-webkit-scrollbar-thumb {
+  background-color: #97a7c3; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 2px solid #ecf0f3; /* creates padding around scroll thumb */
+}
+
 a {
   text-decoration: none;
   display: block;
@@ -23,4 +37,8 @@ img {
 h1,
 h2 {
   font-family: "Poppins", sans-serif;
+}
+
+button {
+  cursor: pointer;
 }

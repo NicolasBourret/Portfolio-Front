@@ -1,3 +1,80 @@
 .project {
-  border: 5px solid red;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1000px) {
+    flex-direction: row;
+  }
+
+  &__image {
+    flex: 1;
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__text {
+    flex: 2;
+
+    padding: 1rem 1rem 1rem 1rem;
+
+    @media (min-width: 1000px) {
+      flex: 1;
+      padding: 150px 2rem 2rem 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #193566;
+      letter-spacing: -2px;
+      margin-bottom: 1rem;
+
+      span {
+        margin: 0 10px;
+        color: #97a7c3;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 1.5rem;
+    color: #193566;
+
+    height: 150px;
+    overflow-y: scroll;
+
+    padding: 0.5rem;
+
+    @media (min-width: 1000px) {
+      height: 200px;
+    }
+  }
+}
+
+.project-links {
+  display: flex;
+
+  a {
+    margin-right: 1rem;
+  }
+}
+
+.project-skills {
+  display: flex;
+  flex-wrap: wrap;
+
+  p {
+    margin-right: 1rem;
+    color: #193566;
+    font-family: "Poppins", sans-serif;
+  }
 }

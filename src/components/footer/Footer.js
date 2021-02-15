@@ -23,86 +23,110 @@ const Footer = ({ dark }) => {
       animate={{ translateY: "0%" }}
       exit={{ translateY: "100%" }}
     >
-      <ButtonIcon>
-        <IconNormal>
-          <span className="footer__items">
-            <img
-              src={github}
-              alt="github"
-              className={`footer__item ${
-                dark ? "footer__item--opacity" : null
-              }`}
-            />
-            <img
-              src={githubWhite}
-              alt="github"
-              className={`footer__item ${
-                dark ? null : "footer__item--opacity"
-              }`}
-            />
-          </span>
-        </IconNormal>
-      </ButtonIcon>
-      <ButtonIcon>
-        <IconNormal>
-          <span className="footer__items">
-            <img
-              src={codepen}
-              alt="codepen"
-              className={`footer__item ${
-                dark ? "footer__item--opacity" : null
-              }`}
-            />
-            <img
-              src={codepenWhite}
-              alt="codepen"
-              className={`footer__item ${
-                dark ? null : "footer__item--opacity"
-              }`}
-            />
-          </span>
-        </IconNormal>
-      </ButtonIcon>
-      <ButtonIcon>
-        <IconNormal>
-          <span className="footer__items">
-            <img
-              src={codesandbox}
-              alt="codesandbox"
-              className={`footer__item ${
-                dark ? "footer__item--opacity" : null
-              }`}
-            />
-            <img
-              src={codesandboxWhite}
-              alt="codesandbox"
-              className={`footer__item ${
-                dark ? null : "footer__item--opacity"
-              }`}
-            />
-          </span>
-        </IconNormal>
-      </ButtonIcon>
-      <ButtonIcon>
-        <IconNormal>
-          <span className="footer__items">
-            <img
-              src={mail}
-              alt="mail"
-              className={`footer__item ${
-                dark ? "footer__item--opacity" : null
-              }`}
-            />
-            <img
-              src={mailWhite}
-              alt="mail"
-              className={`footer__item ${
-                dark ? null : "footer__item--opacity"
-              }`}
-            />
-          </span>
-        </IconNormal>
-      </ButtonIcon>
+      <a href="https://github.com/NicolasBourret" target="_blank">
+        <ButtonIcon
+          onClick={() => {
+            return;
+          }}
+        >
+          <IconNormal>
+            <span className="footer__items">
+              <img
+                src={github}
+                alt="github"
+                className={`footer__item ${
+                  dark ? "footer__item--opacity" : null
+                }`}
+              />
+              <img
+                src={githubWhite}
+                alt="github"
+                className={`footer__item ${
+                  dark ? null : "footer__item--opacity"
+                }`}
+              />
+            </span>
+          </IconNormal>
+        </ButtonIcon>
+      </a>
+      <a href="https://codepen.io/NicolasBourret" target="_blank">
+        <ButtonIcon
+          onClick={() => {
+            return;
+          }}
+        >
+          <IconNormal>
+            <span className="footer__items">
+              <img
+                src={codepen}
+                alt="codepen"
+                className={`footer__item ${
+                  dark ? "footer__item--opacity" : null
+                }`}
+              />
+              <img
+                src={codepenWhite}
+                alt="codepen"
+                className={`footer__item ${
+                  dark ? null : "footer__item--opacity"
+                }`}
+              />
+            </span>
+          </IconNormal>
+        </ButtonIcon>
+      </a>
+      <a href="https://codesandbox.io/u/NicolasBourret" target="_blank">
+        <ButtonIcon
+          onClick={() => {
+            return;
+          }}
+        >
+          <IconNormal>
+            <span className="footer__items">
+              <img
+                src={codesandbox}
+                alt="codesandbox"
+                className={`footer__item ${
+                  dark ? "footer__item--opacity" : null
+                }`}
+              />
+              <img
+                src={codesandboxWhite}
+                alt="codesandbox"
+                className={`footer__item ${
+                  dark ? null : "footer__item--opacity"
+                }`}
+              />
+            </span>
+          </IconNormal>
+        </ButtonIcon>
+      </a>
+      <a href="mailto:nicolas.bourret48@gmail.com" target="_blank">
+        <ButtonIcon
+          onClick={() => {
+            return;
+          }}
+        >
+          <IconNormal>
+            <span className="footer__items">
+              <img
+                src={mail}
+                alt="mail"
+                className={`footer__item ${
+                  dark ? "footer__item--opacity" : null
+                }`}
+              />
+              <img
+                src={mailWhite}
+                alt="mail"
+                className={`footer__item ${
+                  dark ? null : "footer__item--opacity"
+                }`}
+              />
+            </span>
+          </IconNormal>
+        </ButtonIcon>
+      </a>
     </motion.footer>
   );
 };

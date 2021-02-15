@@ -9,8 +9,12 @@ export const ButtonText = ({ children, onClick }) => {
   );
 };
 
-export const ButtonIconLight = ({ children }) => {
-  return <ButtonIcon className="btn__icon--light">{children}</ButtonIcon>;
+export const ButtonIconLight = ({ children, onClick }) => {
+  return (
+    <ButtonIcon className="btn__icon--light" onClick={onClick}>
+      {children}
+    </ButtonIcon>
+  );
 };
 
 export const ButtonIcon = ({ children, className, onClick }) => {

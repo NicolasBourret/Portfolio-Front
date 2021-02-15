@@ -1,3 +1,19 @@
+@mixin fullContent {
+  height: 100%;
+  width: 100%;
+
+  border-radius: 50%;
+}
+
+@mixin backgroundFigure() {
+  @include fullContent();
+  display: block;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -25,53 +41,26 @@
 }
 
 .container {
-  height: 100%;
-  width: 100%;
-
-  border-radius: 50%;
+  @include fullContent();
 
   position: relative;
 
   &__up {
-    display: block;
+    @include backgroundFigure();
 
-    width: 100%;
-    height: 100%;
+    &::before,
+    &::after {
+      @include backgroundFigure();
 
-    border-radius: 50%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
+      content: "";
+    }
 
     &::before {
-      content: "";
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-
       box-shadow: -10px -10px 10px #ffffff;
-      border-radius: 50%;
     }
 
     &::after {
-      content: "";
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-
       box-shadow: 10px 10px 10px #97a7c3;
-      border-radius: 50%;
     }
   }
 
@@ -89,34 +78,19 @@
     z-index: 1;
     pointer-events: none;
 
-    &::before {
+    &::before,
+    &::after {
+      @include backgroundFigure();
+
       content: "";
-      display: block;
+    }
 
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-
+    &::before {
       box-shadow: -10px -10px 10px #ffffff inset;
-      border-radius: 50%;
     }
 
     &::after {
-      content: "";
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-
       box-shadow: 10px 10px 10px #97a7c3 inset;
-      border-radius: 50%;
     }
   }
 }
